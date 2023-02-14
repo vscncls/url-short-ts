@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  mongodb_container:
+    image: mongo:6.0.4
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    ports:
+      - 27017:27017
