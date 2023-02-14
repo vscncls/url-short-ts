@@ -36,6 +36,34 @@ Recieves the shortId as a URL parameter and returns back the full URL, the body 
 }
 ```
 
+## How to run
+
+You can use docker-compose to spin up a mongoDB instance
+
+```sh 
+docker-compose up -d
+```
+
+Copy the example environment variables and change them if you wish
+
+```
+cp .env.example .env
+```
+
+Install the dependencies and run the project in development mode
+
+```
+npm install
+npm run dev
+```
+
+Or build and run
+
+```
+npm run build
+node dist/index.js
+```
+
 ## Improvements to be made
 
 * Some way to handle duplicates (might not be viable because of the way expiration works)
