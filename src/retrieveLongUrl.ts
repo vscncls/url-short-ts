@@ -4,13 +4,14 @@ class ShortIdNotFound extends Error {}
 
 class RetrieveLongUrl {
   private urlStore: UrlStore;
-  private expirationTimeHours = 24;
+  private expirationTimeHours = Number(process.env.EXPIRATION_TIME_HOURS) || 24;
 
   constructor() {
     this.urlStore = new UrlStore();
   }
 
   public async exec(shortId: string): Promise<string> {
+    console.log(this.expirationTimeHours);
     const result = await this.urlStore.findByShortId(shortId);
     if (!result) {
       throw new ShortIdNotFound();

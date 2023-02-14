@@ -1,6 +1,6 @@
 import { UrlStore } from "./urlStore";
 
-const baseUrl = "vscncls.xyz/s/";
+const baseUrl = process.env.BASE_URL || "localhost:3000";
 const maxShortUrlSize = 22;
 const maxLongUrlSize = 2048; // 2KiB
 
